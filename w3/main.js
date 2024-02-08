@@ -21,7 +21,7 @@ function determineHouseholdPts(numberInHouseholdgit ) {
 console.log(`Based on the number of members of the household of ${numberInHousehold} the output would be ${carbonFootprintPoints}.`
 );
 }
-/*
+
 
 function determineHouseSize(houseSize) {
 switch(houseSize) {
@@ -47,12 +47,12 @@ console.log(`Based on the size of the house, a ${houseSize} will increase the ca
 console.log(`The updated carbonfootprint is ${houseSizePts + carbonFootprintPoints}`)  
 }
 
-*/
+
 const numberInHousehold = 4;
 let carbonFootprintPoints = 0;
-//const houseSize = "apartment";
-//let houseSizePts = 0;
+const houseSize = "apartment";
+let houseSizePts = 0;
 
 determineHouseholdPts(5); 
-//determineHouseSize("small house");
+determineHouseSize("small house");
 
