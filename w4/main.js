@@ -42,12 +42,18 @@ cfpData.push([houseHoldMembers, houseSize, houseHoldPTS, houseSizePTS, total]);
 }
 
 function displayOutput() {
-  for (arr of cfpData){
-    console.log(arr)
+  for (arr of cfpData) {
     const output = document.getElementById("output");
+    const newH2 = document.createElement("h2");
+    newH2.textContent = `Carbon Footprint ${arr[4]}`;
+    const newH3 = document.createElement("h3");
+    newH3.textContent = `Based on number in and size of home`
     const newP = document.createElement("p");
-    newP.textContent = `The Carbon Footprint is ${arr[4]} based on a score of ${arr[2]} for a household size of ${arr[0]} members and a score of ${arr[3]} for the ${arr[1]} home`;  
-    output.appendChild(newP)
+    newP.textContent = `This number is based on the number of people in the house of ${arr[0]} (score: ${arr[3]}),`;  
+    newP.textContent += ` and a ${arr[1]} size of home (score:${[2]}).` 
+    output.appendChild(newH2);
+    output.appendChild(newH3);
+    output.appendChild(newP);
   }
 }
 
@@ -62,4 +68,3 @@ start(1, "large");
 start(6, "medium");
 
 displayOutput()
-
