@@ -36,26 +36,30 @@ function determineHouseholdPts(numberInHousehold) {
   return householdPoints
 }
 
-function start(houseHoldMembers, houseSize) {
+function start(houseHoldMembers, houseSize, firstName, lastName) {
   const houseHoldPTS = determineHouseholdPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
+  const firstN = firstName;
+  const lastN = lastName
 cfpData.push({
   houseM: houseHoldMembers,
   houseS: houseSize,
   houseMPTS: houseHoldPTS,
   houseSPTS: houseSizePTS,
-  cfpTotal: total
+  cfpTotal: total,
+  firstN: firstName,
+  lastN: lastName
 });
 }
 
-function displayOutput() {
+function displayOutput() 
 
   for (obj of cfpData) {
     const newH2 = document.createElement("h2");
-    newH2.textContent = `Cardon Footprint ${obj.cfpTotal}`;
+    newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
     const newH3 = document.createElement("h3");
-    newH3.textContent = `Based on number in and size of home`
+    newH3.textContent = `Based on number in and size of home of ${obj.firstN} ${obj.lastN}`;
     const newP = document.createElement("p");
     newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;  
     newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`; 
@@ -77,8 +81,3 @@ FORM.addEventListener('submit', function(e){
   FORM.reset();
 })
 
-
-// The apartment score is not correct. It is because we used 'apt' in the main.js but 'Apartment' in the index file. 
-
-// It's easier to limit the end-user's choice of responses to make sure that the information that they provide fits in with the code. 
-// Trying to code around all the errors and options that a user might include can make the program long and have more room for errors.
