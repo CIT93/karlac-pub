@@ -42,7 +42,7 @@ function start(first, last, houseHoldMembers, houseSize) {
   const total = houseHoldPTS + houseSizePTS;
 cfpData.push({
   firstName: first,
-  lastName: last,
+  lastName: last, 
   houseM: houseHoldMembers,
   houseS: houseSize,
   houseMPTS: houseHoldPTS,
@@ -55,9 +55,9 @@ function displayOutput() {
 
   for (obj of cfpData) {
     const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
+    newH2.textContent = `Cardon Footprint ${obj.cfpTotal}`;
     const newH3 = document.createElement("h3");
-    newH3.textContent = `Based on number in and size of home of ${obj.firstName} ${obj.lastName}`;
+    newH3.textContent = `Based on number in and size of home for ${obj.firstName} ${obj.lastName}`
     const newP = document.createElement("p");
     newP.textContent = `This number is based on the number of people in the house of ${obj.houseM} (score: ${obj.houseMPTS}),`;  
     newP.textContent += ` and a ${obj.houseS} size of home (score: ${obj.houseSPTS}).`; 
@@ -78,7 +78,3 @@ FORM.addEventListener('submit', function(e){
   displayOutput();
   FORM.reset();
 })
-
-// line 78 and 39 had the variables in the wrong order.
-// In my start function, I was re-declaring the variables as 
-// constants when really, I just needed to assign the variables I already had as objects.
