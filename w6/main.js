@@ -68,7 +68,7 @@ function displayOutput() {
   }
 }
 
-function renderTbl(data) {
+function renderTblHeading() {
   const table = document.createElement("table");
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
@@ -80,7 +80,13 @@ function renderTbl(data) {
   });
   thead.appendChild(tr);
   table.appendChild(thead);
-  TBL.appendChild(table);
+  return table
+}
+
+function renderTbl(data) {
+const table =  renderTblHeading();
+
+TBL.appendChild(table);
 }
 
 FORM.addEventListener('submit', function(e){
