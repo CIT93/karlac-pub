@@ -7,7 +7,7 @@ body {
     color: whitesmoke
 }
 input:in-range{
-    background-color: rgb(16, 23, 16);
+    background-color: rgb(142, 186, 142);
 }
 input:out-of-range{
     background-color: lightcoral;

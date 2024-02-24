@@ -1,5 +1,6 @@
 const FORM = document.getElementById("form");
 const OUTPUT = document.getElementById("output");
+const TBL = document.getElementById("tab-data");
 const cfpData = [];
 
 function determineHouseSizePts(size) {
@@ -67,6 +68,21 @@ function displayOutput() {
   }
 }
 
+function renderTbl(data) {
+  const table = document.createElement("table");
+  const thead = document.createElement("thead");
+  const tr = document.createElement("tr");
+  const headingTextArr = ["Name", "HouseHold", "HouseSize", "Footprint", "Actions"]
+  headingTextArr.forEach(function(text){
+    const th = document.createElement("th");
+    th.textContent = text;
+    tr.appendChild(th);
+  });
+  thead.appendChild(tr);
+  table.appendChild(thead);
+  TBL.appendChild(table);
+}
+
 FORM.addEventListener('submit', function(e){
   e.preventDefault();
   const firstName = FORM.firstname.value;
@@ -75,10 +91,11 @@ FORM.addEventListener('submit', function(e){
   const houseSize = FORM.houses.value;
   start(firstName, lastName, houseMembers, houseSize);
   OUTPUT.innerHTML = "";
-  displayOutput();
+ // displayOutput();
+  renderTbl(cfpData);
   FORM.reset();
 })
 
 // line 78 and 39 had the variables in the wrong order.
 // In my start function, I was re-declaring the variables as 
-// constants when really, I just needed to assign the variables I already had as objects.
+// constants when really, I just needed to assign the variables I already had as objects
