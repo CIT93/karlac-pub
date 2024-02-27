@@ -65,3 +65,5 @@ FORM.addEventListener("submit", function (e) {
   renderTbl(cfpData);
   FORM.reset();
 });
+
+// Initially, I had updated my code in week 6 and had to copy and repaste it to week 7
