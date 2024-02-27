@@ -85,9 +85,32 @@ function renderTblHeading() {
 
 function renderTbl(data) {
 const table =  renderTblHeading();
+const tbody = document.createElement("tbody");
+const tr = document.createElement("tr");
+const trTextArr = ["Kar", 3, "large", 20];
+trTextArr.forEach(function(text){
+  const td = document.createElement("td");
+  td.textContent = text;
+  tr.appendChild(td);
+})
+const td = document.createElement("td");
+const btnEdit = document.createElement("button");
+const btnDel = document.createElement("button");
+btnEdit.textContent = "Edit";
+btnDel.textContent = "Del";
+
+td.appendChild(btnEdit);
+td.appendChild(btnDel);
+tr.appendChild(td);
+tbody.appendChild(tr);
+table.appendChild(tbody);
+console.log(table);
 
 TBL.appendChild(table);
 }
+
+// My guess is the reason for the td error is because td was used
+// as a textContent and maybe buttons require more to be declared?
 
 FORM.addEventListener('submit', function(e){
   e.preventDefault();
@@ -102,6 +125,3 @@ FORM.addEventListener('submit', function(e){
   FORM.reset();
 })
 
-// line 78 and 39 had the variables in the wrong order.
-// In my start function, I was re-declaring the variables as 
-// constants when really, I just needed to assign the variables I already had as objects
