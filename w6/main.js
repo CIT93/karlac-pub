@@ -111,7 +111,8 @@ TBL.appendChild(table);
 
 // My guess is the reason for the td error is because td was used
 // as a textContent and maybe buttons require more to be declared?
-
+// I did not realize I was working under the week 6 folder still. 
+// I copied and pasted the information over to week 7
 
 
 FORM.addEventListener('submit', function(e){
