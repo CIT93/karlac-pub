@@ -111,6 +111,9 @@ TBL.appendChild(table);
 
 // My guess is the reason for the td error is because td was used
 // as a textContent and maybe buttons require more to be declared?
+// I'm sorry, I didn't see the note to commit before watching the 
+// video. I notice it when I went to check the commit message
+
 
 FORM.addEventListener('submit', function(e){
   e.preventDefault();
