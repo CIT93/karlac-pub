@@ -19,6 +19,7 @@ function renderTblHeading() {
   return table;
 }
 
+// Updating code as needed
 // data enters the hardcoded information
 
 function renderTbl(data) {
